@@ -14,7 +14,7 @@ sbatch fastp.sh
 find fastp | grep _1.fq > paths_fastp.txt
 
 # trimmm and filter the reads
-
+sbatch kneaddata.sh
 
 ```
 
