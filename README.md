@@ -10,7 +10,7 @@ Trimming reads and removing low quality sequences is needed before running any o
 # get paths to files where the metagenomics reads are
 find $PWD/folder_with_reads/ | grep fastq | grep _1 > paths_reads.txt
 
-# remove adapters
+# remove adapters with fastp (https://github.com/OpenGene/fastp)
 mkdir scripts logs out_fastp
 sbatch fastp.sh
 find fastp | grep _1.fq > paths_fastp.txt
