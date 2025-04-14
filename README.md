@@ -33,15 +33,15 @@ sbatch mOTUs.sh
 
 # singleM (https://github.com/wwood/singlem)
 mkdir singlem_out
-
-
+sbatch singlem.sh
 ```
 
 - All diversity levels
 
 ```
 # kraken2 
-
+mkdir out_kraken
+sbatch kraken2.sh
 
 ```
 # Functional profiling 
