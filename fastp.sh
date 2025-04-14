@@ -19,5 +19,4 @@ name=$(basename $file1 | sed 's/_1.fq.gz//g')
 
 # run program
 fastp -i $file1 -I $file2 -o out_fastp/$name1 -O out_fastp/$name2 --report_title $name\
-        --adapter_fasta adapter.fasta\
         --disable_length_filtering
