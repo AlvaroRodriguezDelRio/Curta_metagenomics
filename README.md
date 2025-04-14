@@ -49,8 +49,12 @@ sbatch kraken2.sh
 For functional profiling, there are tools for detecting general functional genes, and specific for antibiotic resistance genes.
 
 ```
-# general functional genes
+# general functional genes with funprofiler (https://github.com/KoslickiLab/fmh-funprofiler)
+mkdir out_funprofiler
 sbatch funprofiler.sh
 
+# ARGs with arg-oap (https://github.com/xinehc/args_oap)
+mkdir out_args
+sbatch arg_oap.sh
 
 ```
