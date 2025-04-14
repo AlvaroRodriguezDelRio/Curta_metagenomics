@@ -45,3 +45,12 @@ sbatch kraken2.sh
 
 ```
 # Functional profiling 
+
+For functional profiling, there are tools for detecting general functional genes, and specific for antibiotic resistance genes.
+
+```
+# general functional genes
+sbatch funprofiler.sh
+
+
+```
