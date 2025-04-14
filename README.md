@@ -28,8 +28,12 @@ There are several methods for taxonomic profiling on metagenomics, some which ar
 - Prokaryotes:
 ```
 # mOTUs (https://motu-tool.org/)
+mkdir motus_out
+sbatch mOTUs.sh
 
-# singleM
+# singleM (https://github.com/wwood/singlem)
+mkdir singlem_out
+
 
 ```
 
