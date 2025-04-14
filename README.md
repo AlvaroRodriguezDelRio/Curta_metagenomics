@@ -15,7 +15,7 @@ mkdir scripts logs out_fastp
 sbatch fastp.sh
 find fastp | grep _1.fq > paths_fastp.txt
 
-# trimmm and filter the reads
+# trimmm and filter the reads with kneaddata (https://github.com/biobakery/kneaddata)
 mkdir kneaddata_out
 sbatch kneaddata.sh
 find $PWD/kneaddata_out/ | grep -v fastqc | grep paired_1.fastq > paths_clean_1.txt
@@ -23,7 +23,21 @@ find $PWD/kneaddata_out/ | grep -v fastqc | grep paired_1.fastq > paths_clean_1.
 
 # Taxonomic profiling 
 
-There are several methods for taxonomic profiling on metagenomics, some which are already installed are: 
+There are several methods for taxonomic profiling on metagenomics, some which are already installed and you can run directly are:
+
+- Prokaryotes:
+```
+# mOTUs (https://motu-tool.org/)
+
+# singleM
+
+```
+
+- All diversity levels
+
+```
+# kraken2 
 
 
+```
 # Functional profiling 
