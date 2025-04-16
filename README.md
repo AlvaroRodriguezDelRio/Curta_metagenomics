@@ -1,6 +1,6 @@
 # Curta_metagenomics
 
-Here I summarise the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html). All the software I propose here is already installed, you could in principle run the scripts mostly as they are (after changing the number of processes to run and the location of your samples).  
+Here is a brief summary of the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html). All the software I propose here is already installed, you could in principle run the scripts mostly as they are (after changing the number of samples to run and the location of your fastq files).  
 
 # Read trimming and quality control 
 
@@ -26,6 +26,7 @@ find $PWD/kneaddata_out/ | grep -v fastqc | grep paired_1.fastq > paths_clean_1.
 There are several methods for taxonomic profiling on metagenomics, some which are already installed and you can run directly are:
 
 - Prokaryotes:
+  
 ```
 # mOTUs (https://motu-tool.org/)
 mkdir motus_out
