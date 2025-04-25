@@ -47,7 +47,7 @@ sbatch kraken2.sh
 ```
 # Functional profiling 
 
-For functional profiling, there are tools for detecting general functional genes, and specific for antibiotic resistance genes.
+For functional profiling (calculating the relative abundances of functional genes), there are tools for detecting general functional genes, and specific for antibiotic resistance genes.
 
 ```
 # general functional genes with funprofiler (https://github.com/KoslickiLab/fmh-funprofiler)
@@ -57,5 +57,17 @@ sbatch funprofiler.sh
 # ARGs with arg-oap (https://github.com/xinehc/args_oap)
 mkdir out_args
 sbatch arg_oap.sh
+
+```
+
+# Genome size estimation 
+
+It is also possible to estimate average genome size on metagenomic samples, here is how
+
+
+```
+mkdir out_MicrobeCensus
+sbatch MicrobeCensus.sh
+
 
 ```
