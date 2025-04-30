@@ -16,7 +16,7 @@ mkdir logs out_fastp
 # remove adapters with fastp (https://github.com/OpenGene/fastp)
 mkdir out_fastp
 sbatch fastp.sh
-find fastp | grep _1.fq > paths_fastp.txt
+find out_fastp | grep _1.fq > paths_fastp.txt
 
 # trimmm and filter the reads with kneaddata (https://github.com/biobakery/kneaddata)
 mkdir kneaddata_out
