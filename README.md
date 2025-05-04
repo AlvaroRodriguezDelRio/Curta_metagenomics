@@ -31,11 +31,26 @@ There are several methods for taxonomic profiling on metagenomics, some which ar
 - Prokaryotes:
   
 ```
+####
 # mOTUs (https://motu-tool.org/)
+###
+
+# run motus
 mkdir motus_out
 sbatch mOTUs.sh
 
+# format headers for concatenating
+mkdir motus_out_headers
+for i in motus_out/*; do n=$(basename $i);  python format_motus_file.py $i > motus_out_headers/$n; done
+
+# concatenate 
+export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
+motus merge -d motus_out_headers/ > motus_merged.tab
+
+###
 # singleM (https://github.com/wwood/singlem)
+###
+
 mkdir singlem_out
 sbatch singlem.sh
 ```
