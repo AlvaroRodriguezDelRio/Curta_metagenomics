@@ -7,6 +7,11 @@ Here is a brief summary of the main steps for running a metagenomics analysis on
 Trimming reads and removing low quality sequences is needed before running any other analysis. Here is how you may do it:
 
 ```
+# initial preparation
+export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
+conda init bash
+
+
 # get paths to files where the metagenomics reads are
 find $PWD/folder_with_reads/ | grep fastq | grep _1 > paths_reads.txt
 
