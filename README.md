@@ -90,8 +90,11 @@ python concat_funprofiler.py paths_funprofiler.txt > paths_funprofiler.concat.tx
 mkdir out_args
 sbatch arg_oap.sh
 
-
-
+# concatenate into single files
+# there are several files (per type / per gene, normialized by copy number per cell, ...)
+# in this example, you will concatenate copy number of different ARG types per cell 
+find  out_args/ | grep normalized_cell.type.txt > paths_normalized_cell.type.rare.txt
+python concat_args_oap.py  paths_normalized_cell.type.rare.txt > args_oap.normalized_cell.type.concat.tab
 ```
 
 # Genome size estimation 
