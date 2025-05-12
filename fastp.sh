@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --array=1-X # Number of metagenomic samples
-#SBATCH --output logs/%A_%a.out
-#SBATCH --error logs/%A_%a.error
+#SBATCH --output logs/fastp_%a.out
+#SBATCH --error logs/fastp_%a.error
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --qos=standard
