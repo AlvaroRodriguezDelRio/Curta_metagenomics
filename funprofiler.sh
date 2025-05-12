@@ -12,6 +12,7 @@
 export PATH=/scratch/alvarordr/soft/miniconda3_scapp/bin/:$PATH
 conda init bash
 conda activate /scratch/alvarordr/soft/miniconda3_scapp/envs/funcprofiler
+mkdir concat 
 
 ###Paths to files
 file1=$(cat  paths_clean_1.txt | awk -v line=$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}')
