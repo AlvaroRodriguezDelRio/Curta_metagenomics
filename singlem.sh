@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --array=1-N_samples
-#SBATCH --output logs/%A_%a.out
-#SBATCH --error logs/%A_%a.error
+#SBATCH --output logs/singlem_%a.out
+#SBATCH --error logs/singlem_%a.error
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --qos=standard
