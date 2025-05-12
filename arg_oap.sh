@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --array=1-NSAMPLES
-#SBATCH --output logs/%A_%a.out
-#SBATCH --error logs/%A_%a.error
+#SBATCH --output logs/arg_oap_%a.out
+#SBATCH --error logs/arg_oap_%a.error
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --qos=standard
