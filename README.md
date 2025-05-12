@@ -56,7 +56,7 @@ motus merge -d motus_out_headers/ > motus_merged.tab
 # singleM (https://github.com/wwood/singlem)
 ###
 
-mkdir singlem_out
+mkdir out_singlem
 sbatch singlem.sh
 ```
 
