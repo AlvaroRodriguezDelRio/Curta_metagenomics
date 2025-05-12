@@ -15,6 +15,8 @@ file1=$(cat paths_clean_1.txt | awk -v line=$SLURM_ARRAY_TASK_ID '{if (NR == lin
 file2=$(echo $file1 | sed 's/_1.fastq/_2.fastq/g')
 name=$(basename $file1 | sed 's/_1_kneaddata_paired_1.fastq//g')
 
+mkdir temp_fastq
+mkdir out_args
 mkdir temp_fastq/$name
 cp $file1 temp_fastq/$name/
 cp $file2 temp_fastq/$name/
