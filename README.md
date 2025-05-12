@@ -73,13 +73,24 @@ sbatch kraken2.sh
 For functional profiling (calculating the relative abundances of functional genes), there are tools for detecting general functional genes, and specific for antibiotic resistance genes.
 
 ```
+###
 # general functional genes with funprofiler (https://github.com/KoslickiLab/fmh-funprofiler)
+###
+
+# run 
 mkdir out_funprofiler
 sbatch funprofiler.sh
+
+# concat output
+find out_funprofiler | grep csv > paths_funprofiler.txt
+python concat_funprofiler.py paths_funprofiler.txt > paths_funprofiler.concat.txt
+
 
 # ARGs with arg-oap (https://github.com/xinehc/args_oap)
 mkdir out_args
 sbatch arg_oap.sh
+
+
 
 ```
 
