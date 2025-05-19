@@ -34,7 +34,7 @@ sbatch fastp.sh
 find out_fastp | grep _1.fq > paths_fastp.txt
 
 # trimmm and filter the reads with kneaddata (https://github.com/biobakery/kneaddata)
-mkdir kneaddata_out
+mkdir kneaddata_out fastq_name_format
 sbatch kneaddata.sh
 find $PWD/kneaddata_out/ | grep -v fastqc | grep paired_1.fastq > paths_clean_1.txt
 ```
@@ -66,8 +66,15 @@ motus merge -d motus_out_headers/ > motus_merged.tab
 # singleM (https://github.com/wwood/singlem)
 ###
 
+# run 
+export PATH=/scratch/alvarordr/soft/miniconda3_scapp/bin/:$PATH
+conda activate /scratch/alvarordr/soft/miniconda3_scapp/envs/singlem
 mkdir out_singlem
 sbatch singlem.sh
+
+# concatenate
+cat out_singlem/* | grep -v sample > singleM.tab
+
 ```
 
 - All diversity levels
