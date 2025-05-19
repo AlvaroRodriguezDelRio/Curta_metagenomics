@@ -23,6 +23,7 @@ export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
 conda init bash
 
 # get paths to files where the metagenomics reads are
+# you may need to change here the grep command for filtering the reads from the first pass (.1, /1, _1 are common names)
 find $PWD/folder_with_reads/ | grep fastq | grep _1 > paths_reads.txt
 
 # create log folder
@@ -56,7 +57,7 @@ sbatch mOTUs.sh
 
 # format headers for concatenating
 mkdir motus_out_headers
-for i in motus_out/*; do n=$(basename $i);  python format_motus_file.py $i > motus_out_headers/$n; done
+for i in motus_out/*; do n=$(basename $i);  python format_motus_files.py $i > motus_out_headers/$n; done
 
 # concatenate 
 export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
@@ -83,6 +84,8 @@ cat out_singlem/* | grep -v sample > singleM.tab
 # kraken2 
 mkdir out_kraken
 sbatch kraken2.sh
+
+
 
 ```
 # Functional profiling 
