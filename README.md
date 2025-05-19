@@ -22,8 +22,8 @@ conda init bash
 # get paths to files where the metagenomics reads are
 find $PWD/folder_with_reads/ | grep fastq | grep _1 > paths_reads.txt
 
-# create folders
-mkdir logs out_fastp
+# create log folder
+mkdir logs
 
 # remove adapters with fastp (https://github.com/OpenGene/fastp)
 mkdir out_fastp
