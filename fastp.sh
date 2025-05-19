@@ -11,7 +11,7 @@
 export PATH=/scratch/alvarordr/soft/miniconda3_scapp/bin/:$PATH
 
 ###Paths to files
-file1=$(cat /scratch/alvarordr/field_experiment_metagenomes/data/paths_reads_1.txt | awk -v line=$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}')
+file1=$(cat paths_reads.txt | awk -v line=$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}')
 file2=$(echo $file1 | sed 's/_1.fq.gz/_2.fq.gz/g')
 name1=$(basename $file1)
 name2=$(basename $file2)
