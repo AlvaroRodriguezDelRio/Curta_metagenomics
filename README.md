@@ -1,7 +1,6 @@
 # Curta_metagenomics
 
-Here is a brief summary of the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html). All the software I propose here is already installed, you could in principle run the scripts mostly as they are. The only thing you need to modify in your scripts is:
--  The number of samples to run by changing the ```#SBATCH --array=1-X``` line , being X the number of samples you have
+Here is a brief summary of the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html). All the software I propose here is already installed, you could in principle run the scripts mostly as they are. 
 
 Before starting, clone this repository to the directory where you wanna perform the analysis, using 
 
@@ -9,6 +8,10 @@ Before starting, clone this repository to the directory where you wanna perform 
 git clone https://github.com/AlvaroRodriguezDelRio/Curta_metagenomics.git
 cd Curta_metagenomics
 ```
+
+The only thing you need to modify in your scripts is:
+-  The number of samples to run by changing the ```#SBATCH --array=1-X``` line , being X the number of samples you have
+- The formatting of your sample names, in the declaration of the `file2` and `name` variables. 
 
 # Read trimming and quality control 
 
