@@ -1,6 +1,7 @@
 # Curta_metagenomics
 
-Here is a brief summary of the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html). All the software I propose here is already installed, you could in principle run the scripts mostly as they are (after changing the number of samples to run and the location of your fastq files).  
+Here is a brief summary of the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html). All the software I propose here is already installed, you could in principle run the scripts mostly as they are. The only thing you need to modify in your scripts is:
+-  The number of samples to run by changing the ```#SBATCH --array=1-X``` line , being X the number of samples you have
 
 # Read trimming and quality control 
 
