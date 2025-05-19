@@ -3,6 +3,13 @@
 Here is a brief summary of the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html). All the software I propose here is already installed, you could in principle run the scripts mostly as they are. The only thing you need to modify in your scripts is:
 -  The number of samples to run by changing the ```#SBATCH --array=1-X``` line , being X the number of samples you have
 
+Before starting, clone this repository to the directory where you wanna perform the analysis, using 
+
+```
+git clone https://github.com/AlvaroRodriguezDelRio/Curta_metagenomics.git
+cd Curta_metagenomics
+```
+
 # Read trimming and quality control 
 
 Trimming reads and removing low quality sequences is needed before running any other analysis. Here is how you may do it:
@@ -11,7 +18,6 @@ Trimming reads and removing low quality sequences is needed before running any o
 # initial preparation
 export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
 conda init bash
-
 
 # get paths to files where the metagenomics reads are
 find $PWD/folder_with_reads/ | grep fastq | grep _1 > paths_reads.txt
