@@ -4,7 +4,7 @@ Here is a brief summary of the main steps for running a metagenomics analysis on
 
 First step is to ask for an account in Curta. You can do that here: https://ssl2.cms.fu-berlin.de/fu-berlin/en/sites/high-performance-computing/PM_Zugang-beantragen/index.html 
 
-Also, before starting, clone this repository to the directory where you want to perform the analysis, using:
+Also, clone this repository to the directory where you want to perform the analysis (preferably in your /scratch/user_name directory), using:
 
 ```
 git clone https://github.com/AlvaroRodriguezDelRio/Curta_metagenomics.git
