@@ -87,10 +87,11 @@ cat out_singlem/* | grep -v sample > singleM.tab
 mkdir out_kraken
 sbatch kraken2.sh
 
-# get abundance per lineage and concatenate 
+# get abundance per lineage 
 find out_kraken/ | grep kraken_annots.sp.tab > paths_kraken.txt
 
-
+# concatenate
+srun srun --qos=standard --mem=10G -n 1 -t 10:00:00  concatenate.kraken.py out_kraken/*kraken_annots.lin.tab > kraken.tab
 ```
 # Functional profiling 
 
