@@ -1,8 +1,10 @@
 # Curta_metagenomics
 
-Here is a brief summary of the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html). All the software I propose here is already installed, you could in principle run the scripts mostly as they are. 
+Here is a brief summary of the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html).  
 
-Before starting, clone this repository to the directory where you wanna perform the analysis, using 
+First step is to ask for an account in Curta, the computing cluster within the FU. You can do that here: https://ssl2.cms.fu-berlin.de/fu-berlin/en/sites/high-performance-computing/PM_Zugang-beantragen/index.html 
+
+Also, before starting, clone this repository to the directory where you want to perform the analysis, using:
 
 ```
 git clone https://github.com/AlvaroRodriguezDelRio/Curta_metagenomics.git
@@ -78,12 +80,13 @@ cat out_singlem/* | grep -v sample > singleM.tab
 
 ```
 
-- All diversity levels
+- All diversity levels (viruses, prokaryotes, eukaryotes)
 
 ```
 # kraken2 
 mkdir out_kraken
 sbatch kraken2.sh
+
 
 
 
