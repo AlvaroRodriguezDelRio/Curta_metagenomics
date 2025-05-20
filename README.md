@@ -1,8 +1,8 @@
 # Curta_metagenomics
 
-Here is a brief summary of the main steps for running a metagenomics analysis on Curta (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html).  
+Here is a brief summary of the main steps for running a metagenomics analysis on Curta, the computing cluster within the FU (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html).  
 
-First step is to ask for an account in Curta, the computing cluster within the FU. You can do that here: https://ssl2.cms.fu-berlin.de/fu-berlin/en/sites/high-performance-computing/PM_Zugang-beantragen/index.html 
+First step is to ask for an account in Curta. You can do that here: https://ssl2.cms.fu-berlin.de/fu-berlin/en/sites/high-performance-computing/PM_Zugang-beantragen/index.html 
 
 Also, before starting, clone this repository to the directory where you want to perform the analysis, using:
 
@@ -116,7 +116,10 @@ find out_funprofiler | grep csv > paths_funprofiler.txt
 python concat_funprofiler.py paths_funprofiler.txt > paths_funprofiler.concat.txt
 
 
+####
 # ARGs with arg-oap (https://github.com/xinehc/args_oap)
+####
+
 mkdir out_args
 sbatch arg_oap.sh
 
