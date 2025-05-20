@@ -91,7 +91,7 @@ sbatch kraken2.sh
 find out_kraken/ | grep kraken_annots.sp.tab > paths_kraken.txt
 
 # concatenate
-srun srun --qos=standard --mem=10G -n 1 -t 10:00:00  concatenate.kraken.py out_kraken/*kraken_annots.lin.tab > kraken.tab
+srun --qos=standard --mem=10G -n 1 -t 10:00:00  python concatenate.kraken.py out_kraken/*abs_per_lin.tab > kraken.tab
 ```
 # Functional profiling 
 
