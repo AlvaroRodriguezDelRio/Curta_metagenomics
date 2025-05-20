@@ -102,6 +102,11 @@ For functional profiling (calculating the relative abundances of functional gene
 # general functional genes with funprofiler (https://github.com/KoslickiLab/fmh-funprofiler)
 ###
 
+# prepare
+export PATH=/scratch/alvarordr/soft/miniconda3_scapp/bin/:$PATH
+conda activate /scratch/alvarordr/soft/miniconda3_scapp/envs/funcprofiler
+
+
 # run 
 mkdir out_funprofiler
 sbatch funprofiler.sh
@@ -128,6 +133,12 @@ It is also possible to estimate average genome size of microbial communities on 
 
 
 ```
+# run 
 mkdir out_MicrobeCensus
 sbatch MicrobeCensus.sh
+
+# concatenate
+find out_MicrobeCensus | grep tab > paths_MicrobeCensus.txt
+python concatenate.MicrobeCensus.py paths_MicrobeCensus.txt > MicrobeCensus.txt
 ```
+
