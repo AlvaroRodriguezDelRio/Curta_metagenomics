@@ -87,7 +87,8 @@ cat out_singlem/* | grep -v sample > singleM.tab
 mkdir out_kraken
 sbatch kraken2.sh
 
-
+# get abundance per lineage and concatenate 
+find out_kraken/ | grep kraken_annots.sp.tab > paths_kraken.txt
 
 
 ```
