@@ -14,4 +14,4 @@ file1=$(cat paths_kraken.txt | awk -v line=$SLURM_ARRAY_TASK_ID '{if (NR == line
 name=$(basename $file1 | sed 's/.kraken_annots.sp.tab//g')
 file2=$(echo $file1 | sed 's/.kraken_annots.sp.tab/.species2lin.tab/g')
 
-python scripts/abs_per_lin.kraken.py $file2 $file1 > out_kraken/$name.abs_per_lin.tab
+python abs_per_lin.kraken.py $file2 $file1 > out_kraken/$name.abs_per_lin.tab
