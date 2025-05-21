@@ -9,10 +9,13 @@ Also, clone this repository to the directory where you want to perform the analy
 ```
 git clone https://github.com/AlvaroRodriguezDelRio/Curta_metagenomics.git
 cd Curta_metagenomics
+export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
+conda init bash
+mkdir logs
 ```
 
 The only thing you need to modify in your scripts is:
--  The number of samples to run by changing the ```#SBATCH --array=1-X``` line , being X the number of samples you have
+- The number of samples to run by changing the ```#SBATCH --array=1-X``` line , being X the number of samples you have
 - The formatting of your sample names, in the declaration of the `file2` and `name` variables. 
 
 # Read trimming and quality control 
@@ -20,16 +23,9 @@ The only thing you need to modify in your scripts is:
 Trimming reads and removing low quality sequences is needed before running any other analysis. Here is how you may do it:
 
 ```
-# initial preparation
-export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
-conda init bash
-
 # get paths to files where the metagenomics reads are
 # you may need to change here the grep command for filtering the reads from the first pass (.1, /1, _1 are common names)
 find $PWD/folder_with_reads/ | grep fastq | grep _1 > paths_reads.txt
-
-# create log folder
-mkdir logs
 
 # remove adapters with fastp (https://github.com/OpenGene/fastp)
 mkdir out_fastp
@@ -82,8 +78,13 @@ cat out_singlem/* | grep -v sample > singleM.tab
 
 - All diversity levels (viruses, prokaryotes, eukaryotes)
 
+
 ```
+###
 # kraken2 
+###
+
+# run 
 mkdir out_kraken
 sbatch kraken2.sh
 
@@ -106,20 +107,19 @@ For functional profiling (calculating the relative abundances of functional gene
 export PATH=/scratch/alvarordr/soft/miniconda3_scapp/bin/:$PATH
 conda activate /scratch/alvarordr/soft/miniconda3_scapp/envs/funcprofiler
 
-
 # run 
 mkdir out_funprofiler
 sbatch funprofiler.sh
 
-# concat output
+# concatenate output
 find out_funprofiler | grep csv > paths_funprofiler.txt
 python concat_funprofiler.py paths_funprofiler.txt > paths_funprofiler.concat.txt
-
 
 ####
 # ARGs with arg-oap (https://github.com/xinehc/args_oap)
 ####
 
+# run
 mkdir out_args
 sbatch arg_oap.sh
 
