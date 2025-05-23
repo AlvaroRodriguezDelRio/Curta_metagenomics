@@ -1,8 +1,8 @@
-## Curta_metagenomics
+# Curta_metagenomics
 
 Here is a brief summary of the main steps for running a metagenomics analysis on Curta, the computing cluster within the FU (https://www.fu-berlin.de/sites/high-performance-computing/Rechenressourcen/index.html).  
 
-# Before metagenomics
+## Before metagenomics
 
 First step is to ask for an account in Curta. You can do that here: https://ssl2.cms.fu-berlin.de/fu-berlin/en/sites/high-performance-computing/PM_Zugang-beantragen/index.html 
 
@@ -14,7 +14,7 @@ For copying data from / to the cluster, you can use the `scp` command from your 
 
 Something important to do after your sequences arrive is to create a back-up (`/scratch/` is not baked-up). You can do that by copying the data to `/remote/trove/bcp/rilliglab/`, in a directory with your user name. 
 
-# Download repository
+## Download repository
 
 Clone this repository to the directory where you want to perform the analysis (somewhere under your ```/scratch/user_name/``` directory), using:
 
@@ -30,7 +30,7 @@ The only thing you need to modify in your scripts is:
 - The number of samples to run by changing the ```#SBATCH --array=1-X``` line , being X the number of samples you have
 - The formatting of your sample names, in the declaration of the `file2` and `name` variables. 
 
-# Read trimming and quality control 
+## Read trimming and quality control 
 
 Trimming reads and removing low quality sequences is needed before running any other analysis. Here is how you may do it:
 
@@ -50,7 +50,7 @@ sbatch kneaddata.sh
 find $PWD/kneaddata_out/ | grep -v fastqc | grep paired_1.fastq > paths_clean_1.txt
 ```
 
-# Taxonomic profiling 
+## Taxonomic profiling 
 
 There are several methods for taxonomic profiling on metagenomics, some which are already installed and you can run directly are:
 
@@ -106,7 +106,7 @@ find out_kraken/ | grep kraken_annots.sp.tab > paths_kraken.txt
 # concatenate
 srun --qos=standard --mem=10G -n 1 -t 10:00:00  python concatenate.kraken.py out_kraken/*abs_per_lin.tab > kraken.tab
 ```
-# Functional profiling 
+## Functional profiling 
 
 For functional profiling (calculating the relative abundances of functional genes), there are tools for detecting general functional genes, and specific for antibiotic resistance genes.
 
@@ -142,7 +142,7 @@ find  out_args/ | grep normalized_cell.type.txt > paths_normalized_cell.type.rar
 python concat_args_oap.py  paths_normalized_cell.type.rare.txt > args_oap.normalized_cell.type.concat.tab
 ```
 
-# Genome size estimation 
+## Genome size estimation 
 
 It is also possible to estimate average genome size of microbial communities on metagenomic samples, here is how
 
