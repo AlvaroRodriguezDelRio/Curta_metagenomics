@@ -4,7 +4,15 @@ Here is a brief summary of the main steps for running a metagenomics analysis on
 
 First step is to ask for an account in Curta. You can do that here: https://ssl2.cms.fu-berlin.de/fu-berlin/en/sites/high-performance-computing/PM_Zugang-beantragen/index.html 
 
-Also, clone this repository to the directory where you want to perform the analysis (preferably under your ```/scratch/user_name/``` directory), using:
+After you have your account, you can acess by typing `ssh user_name@curta.zedat.fu-berlin.de` and your password. This will access your `/home/user_name` directory. the `/home` partition is small, and should not be used for doing analysis, just to store final results. You can doyour analysis in `/scratch/user_name/`. 
+
+For copying data from / to the cluster, you can use the `scp` command from your local computer. 
+- For downloading data: `scp user_name@curta.zedat.fu-berlin.de:your_data_location_in_curta directory_where_you_want_to_donwload_the_data`
+- For uploading data: `scp location_of_the_data user_name@curta.zedat.fu-berlin.de:directory_where_you_want_to_upload_the_data`
+
+Something important to do after your sequences arrive is to create a back-up (`/scratch/` is not baked-up). You can do that by copying the data to `/remote/trove/bcp/rilliglab/`, in a directory with your user name. 
+
+Clone this repository to the directory where you want to perform the analysis (somewhere under your ```/scratch/user_name/``` directory), using:
 
 ```
 git clone https://github.com/AlvaroRodriguezDelRio/Curta_metagenomics.git
