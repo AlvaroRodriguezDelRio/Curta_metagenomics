@@ -4,8 +4,8 @@
 #SBATCH --error logs/%A_%a.error
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --qos=standard
-#SBATCH --time=10:00:00
+#SBATCH --qos=hiprio
+#SBATCH --time=1:00:00
 #SBATCH --mem=1G
 
 
