@@ -72,6 +72,7 @@ for i in motus_out/*; do n=$(basename $i);  python format_motus_files.py $i > mo
 # concatenate 
 export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
 motus merge -d motus_out_headers/ > motus_merged.tab
+rm -rf motus_out_headers
 
 ###
 # singleM (https://github.com/wwood/singlem)
