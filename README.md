@@ -28,7 +28,10 @@ mkdir logs
 
 The only thing you need to modify in your `.sh` scripts is:
 - The number of samples to run by changing the ```#SBATCH --array=1-X``` line , being X the number of samples you have
-- The formatting of your sample names, in the declaration of the `file2` and `name` variables. 
+- The formatting of your sample names, in the declaration of the `file2` and `name` variables.
+- Software parameters (defaults are usually working well)
+
+Some python scripts also assume certain file name terminations, which may need to be changed. 
 
 ## Read trimming and quality control 
 
