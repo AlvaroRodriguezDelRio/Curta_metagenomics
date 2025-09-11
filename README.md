@@ -161,3 +161,28 @@ find out_MicrobeCensus | grep tab > paths_MicrobeCensus.txt
 python concatenate.MicrobeCensus.py paths_MicrobeCensus.txt > MicrobeCensus.txt
 ```
 
+
+## Assembly
+
+The next step in the typical metagenomic workflow is to assemble the short reads into longer contigs. For doing so, a Megahit (https://github.com/voutcn/megahit) is a popular software  
+
+```
+# run 
+mkdir out_megahit
+sbatch megahit.sh
+
+# get results & concatenate 
+find $PWD/out_megahit/ | grep final.contigs.fa | grep -v interm > paths_contigs.txt
+
+# 
+```
+
+## MAG building 
+
+```
+
+```
+
+
+
+
