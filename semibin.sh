@@ -14,6 +14,6 @@ conda activate SemiBin
 mkdir out_semibin/
 
 SemiBin2 multi_easy_bin \
--i ../assembly/coassembly/concat_contigs.min_1000_bps.semibin.oneline.sorted.fasta \
+-i contigs.concatenated.min_1kbps.fa \
 -b out_bt/*sorted.bam \
 -o out_semibin/ -p 10
