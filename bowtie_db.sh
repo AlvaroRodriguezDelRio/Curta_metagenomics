@@ -7,4 +7,4 @@
 #SBATCH --mem=100G
 
 export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
-bowtie2-build concat_contigs.min_1000_bps.fasta concat_contigs.min_1000_bps
+bowtie2-build contigs.concatenated.min_1kbps.fa out_bt/db
