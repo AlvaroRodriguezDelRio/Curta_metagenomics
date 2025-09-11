@@ -193,7 +193,12 @@ sbatch bowtie_db.sh
 sbatch bowtie.sh
 
 # run semiin 
+export PATH=/scratch/alvarordr/soft/miniforge-pypy3/bin/:$PATH
+conda activate SemiBin
+mkdir out_semibin/
+
 sbatch semibin.sh
+
 
 ```
 
