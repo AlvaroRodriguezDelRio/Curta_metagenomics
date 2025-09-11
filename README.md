@@ -188,7 +188,7 @@ We can now build MAGs on the assemblies. For that , we will use the SemiBin soft
 # build bowtie2 index 
 mkdir out_bt/
 
-
+# maps reads to bowtie database 
 
 ```
 
