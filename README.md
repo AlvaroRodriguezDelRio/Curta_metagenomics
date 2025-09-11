@@ -171,15 +171,24 @@ The next step in the typical metagenomic workflow is to assemble the short reads
 mkdir out_megahit
 sbatch megahit.sh
 
-# get results & concatenate 
+# get results & concatenate (adding sample name to fasta headers) 
 find $PWD/out_megahit/ | grep final.contigs.fa | grep -v interm > paths_contigs.txt
+python concat_assembly.add_sample_name.py paths_contigs.txt > contigs.concatenated.fa
 
-# 
+# Dircard very short contigs (< 1k bps)
+/scratch/alvarordr/soft/miniconda3_scapp/bin/seqkit  seq -m 1000 contigs.concatenated.fa > contigs.concatenated.min_1kbps.fa
+
 ```
 
 ## MAG building 
 
+We can now build MAGs on the assemblies. For that , we will use the SemiBin software (https://academic.oup.com/bioinformatics/article/39/Supplement_1/i21/7210480). For that, we first need to map the reads back to the assemblies, for which we will use bowtie2
+
 ```
+# build bowtie2 index 
+mkdir out_bt/
+
+
 
 ```
 
