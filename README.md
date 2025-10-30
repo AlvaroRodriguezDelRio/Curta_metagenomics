@@ -198,10 +198,14 @@ conda activate SemiBin
 mkdir out_semibin/
 
 sbatch semibin.sh
+```
 
+## Gene prediction and functional annotation 
 
 ```
 
+
+```
 
 
 
