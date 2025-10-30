@@ -178,6 +178,17 @@ python concat_assembly.add_sample_name.py paths_contigs.txt > contigs.concatenat
 # Dircard very short contigs (< 1k bps)
 /scratch/alvarordr/soft/miniconda3_scapp/bin/seqkit  seq -m 1000 contigs.concatenated.fa > contigs.concatenated.min_1kbps.fa
 
+# bowtie db
+sbatch scripts/bowtie.sh
+Submitted batch job 20703994
+
+# create chunks for paralellizing future steps 
+awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < contigs.concatenated.min_1kbps.fa > contigs.concatenated.min_1kbps.oneLine.fa
+sed -i '1d'  contigs.concatenated.min_1kbps.oneLine.fa
+mkdir chunks
+split -l 50000 -a 5 -d contigs.concatenated.min_1kbps.oneLine.fa chunks/chunk_
+find $PWD/chunks | grep chunk_ > paths_chunks.txt
+
 ```
 
 ## MAG building 
