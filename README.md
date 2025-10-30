@@ -214,7 +214,11 @@ sbatch semibin.sh
 ## Gene prediction and functional annotation 
 
 ```
+# run gene prediction
+sbatch prodigal.sh
+find $PWD/proteins | grep faa | grep chunk_ > paths_proteins.txt
 
+# run functional annotation with eggnog-mapper 
 
 ```
 
