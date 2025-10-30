@@ -218,7 +218,10 @@ sbatch semibin.sh
 sbatch prodigal.sh
 find $PWD/proteins | grep faa | grep chunk_ > paths_proteins.txt
 
-# run functional annotation with eggnog-mapper 
+# run functional annotation with eggnog-mapper
+sbatch emapper_1.sh
+cat out_emapper/chunk*.emapper.seed_orthologs > all.seed_orthologs
+sbatch emapper_2.sh
 
 ```
 
