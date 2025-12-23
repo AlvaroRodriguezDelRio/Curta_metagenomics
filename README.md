@@ -179,8 +179,7 @@ python concat_assembly.add_sample_name.py paths_contigs.txt > contigs.concatenat
 /scratch/alvarordr/soft/miniconda3_scapp/bin/seqkit  seq -m 1000 contigs.concatenated.fa > contigs.concatenated.min_1kbps.fa
 
 # bowtie db
-sbatch scripts/bowtie.sh
-Submitted batch job 20703994
+sbatch bowtie.sh
 
 # create chunks for paralellizing future steps 
 awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < contigs.concatenated.min_1kbps.fa > contigs.concatenated.min_1kbps.oneLine.fa
