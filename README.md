@@ -192,7 +192,7 @@ find $PWD/chunks | grep chunk_ > paths_chunks.txt
 
 ```
 
-## MAG building 
+## MAG building and analysis
 
 We can now build MAGs on the assemblies. For that , we will use the SemiBin software (https://academic.oup.com/bioinformatics/article/39/Supplement_1/i21/7210480). For that, we first need to map the reads back to the assemblies, for which we will use bowtie2
 
@@ -206,10 +206,18 @@ sbatch bowtie.sh
 
 # run semiin 
 export PATH=/scratch/alvarordr/soft/miniforge-pypy3/bin/:$PATH
+source /scratch/alvarordr/soft/miniforge-pypy3/etc/profile.d/conda.sh
 conda activate SemiBin
 mkdir out_semibin/
-
 sbatch semibin.sh
+
+# get genome quality
+find find $PWD/out_semibin | grep fa.gz > paths_bins.txt
+sbatch checkM2.sh
+
+# genome taxonomic annotation
+
+
 ```
 
 ## Gene prediction and functional annotation 
