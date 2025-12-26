@@ -214,6 +214,9 @@ sbatch semibin.sh
 # get genome quality
 find find $PWD/out_semibin | grep fa.gz > paths_bins.txt
 sbatch checkM2.sh
+cat checkm2_results/quality_report.tsv | cut -f1-3 > bin2completness_cont.tab
+perl -F"\t" -lane 'print if $F[1]>=50 && $F[2]<10' bin2completness_cont.tab | cut -f1 > mediumQ_bins.txt
+
 
 # genome taxonomic annotation
 
