@@ -8,6 +8,8 @@
 #SBATCH --time=14-00:00
 #SBATCH --mem=150G
 
+export PATH=/scratch/alvarordr/soft/miniconda3/bin/:$PATH
+
 ###Paths to files
 file1=$(cat  paths_clean_1.txt | awk -v line=$SLURM_ARRAY_TASK_ID '{if (NR == line) print $0}')
 name=$(basename $file1 | sed 's/_kneaddata_paired_1.fastq//g')
