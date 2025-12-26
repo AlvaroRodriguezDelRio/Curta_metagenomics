@@ -125,6 +125,8 @@ conda activate /scratch/alvarordr/soft/miniconda3_scapp/envs/funcprofiler
 
 # run 
 mkdir out_funprofiler
+source /scratch/alvarordr/soft/miniconda3_scapp/etc/profile.d/conda.sh
+conda activate /scratch/alvarordr/soft/miniconda3_scapp/envs/funcprofiler
 sbatch funprofiler.sh
 
 # concatenate output
