@@ -10,7 +10,7 @@
 
 
 export PATH=/scratch/alvarordr/soft/miniconda3_scapp/bin/:$PATH
-conda init bash
+source /scratch/alvarordr/soft/miniconda3_scapp/etc/profile.d/conda.sh
 conda activate /scratch/alvarordr/soft/miniconda3_scapp/envs/funcprofiler
 mkdir concat 
 
