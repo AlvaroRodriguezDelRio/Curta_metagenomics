@@ -121,6 +121,7 @@ For functional profiling (calculating the relative abundances of functional gene
 
 # prepare
 export PATH=/scratch/alvarordr/soft/miniconda3_scapp/bin/:$PATH
+source /scratch/alvarordr/soft/miniconda3_scapp/etc/profile.d/conda.sh
 conda activate /scratch/alvarordr/soft/miniconda3_scapp/envs/funcprofiler
 
 # run 
