@@ -83,6 +83,7 @@ rm -rf motus_out_headers
 
 # run 
 export PATH=/scratch/alvarordr/soft/miniconda3_scapp/bin/:$PATH
+source /scratch/alvarordr/soft/miniconda3_scapp/etc/profile.d/conda.sh
 conda activate /scratch/alvarordr/soft/miniconda3_scapp/envs/singlem
 mkdir out_singlem
 sbatch singlem.sh
