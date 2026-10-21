@@ -19,5 +19,5 @@ file2=$(echo $file1 | sed 's/paired_1/paired_2/g')
 fileu1=$(echo $file1 | sed 's/paired_1/unmatched_1/g')
 fileu2=$(echo $file1 | sed 's/paired_1/unmatched_2/g')
 
-/scratch/alvarordr/soft/miniconda_2024/bin/kraken2 --db /scratch/alvarordr/soft/kraken_db/k2_pluspf_20230605/ --paired $file1 $file2 --use-names  >  out_kraken/$name.kraken_annots.sp.tab
-/scratch/alvarordr/soft/miniconda_2024/bin/kraken2 --db /scratch/alvarordr/soft/kraken_db/k2_pluspf_20230605/ --paired $file1 $file2 --use-names --use-mpa-style --report out_kraken/$name.species2lin.tab
+/scratch/alvarordr/soft/miniconda_2024/bin/kraken2 --db /home/alvarordr/databases/kraken2/database/ --paired $file1 $file2 --use-names  >  out_kraken/$name.kraken_annots.sp.tab
+/scratch/alvarordr/soft/miniconda_2024/bin/kraken2 --db /home/alvarordr/databases/kraken2/database/ --paired $file1 $file2 --use-names --use-mpa-style --report out_kraken/$name.species2lin.tab
