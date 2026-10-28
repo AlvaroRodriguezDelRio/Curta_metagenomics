@@ -219,6 +219,13 @@ sbatch checkM2.sh
 cat checkm2_results/quality_report.tsv | cut -f1-3 > bin2completness_cont.tab
 perl -F"\t" -lane 'print if $F[1]>=50 && $F[2]<10' bin2completness_cont.tab | cut -f1 > mediumQ_bins.txt
 
+# get contig to genome
+for i in $(grep -F -w -f mediumQ_bins.txt paths_bins.txt); do for j in $(zcat $i | grep '>'); do echo -e "$i\t$j"; done; done | sed 's/out\/dereplicated_genomes\///g' | sed 's/.fa.gz//g' | sed 's/>//g' > drep_mq.genome2contigs.txt
+
+# genome dereplication
+mkdir all_bins
+for i in $(grep -F -w -f mediumQ_bins.txt paths_bins.txt); do cp $i all_bins/; echo $i; done
+sbatch scripts/drep.sh
 
 # genome taxonomic annotation
 
