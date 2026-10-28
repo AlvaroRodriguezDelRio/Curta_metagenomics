@@ -225,6 +225,8 @@ for i in $(grep -F -w -f mediumQ_bins.txt paths_bins.txt); do for j in $(zcat $i
 # genome dereplication
 mkdir all_bins
 for i in $(grep -F -w -f mediumQ_bins.txt paths_bins.txt); do cp $i all_bins/; echo $i; done
+source /scratch/alvarordr/soft/miniforge-pypy3/etc/profile.d/conda.sh
+conda activate /scratch/alvarordr/soft/miniforge-pypy3/envs/checkm2
 sbatch scripts/drep.sh
 
 # genome taxonomic annotation
