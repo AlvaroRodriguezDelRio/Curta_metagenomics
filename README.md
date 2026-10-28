@@ -239,6 +239,7 @@ sbatch gtdb.sh
 mkdir out_coverM
 find out_drep/dereplicated_genomes/ | grep fa.gz > paths_drep.mq.txt
 sbatch coverm.sh
+python /scratch/alvarordr/field_experiment_metagenomes/analysis/binning_combined/drep/scripts/conc_coverm.py out_coverM/* | sed 's/.tab//g' > coverM.tab
 
 ```
 
