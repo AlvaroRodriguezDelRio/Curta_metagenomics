@@ -230,7 +230,14 @@ conda activate /scratch/alvarordr/soft/miniforge-pypy3/envs/checkm2
 sbatch scripts/drep.sh
 
 # genome taxonomic annotation
+conda deactivate
+source /scratch/alvarordr/soft/miniconda3_scapp/etc/profile.d/conda.sh
+conda activate gtdbtk-2.1.1
+sbatch gtdb.sh
 
+# genome abundance
+find out/dereplicated_genomes/ | grep fa.gz > paths_drep.mq.txt
+sbatch coverm.sh
 
 ```
 
