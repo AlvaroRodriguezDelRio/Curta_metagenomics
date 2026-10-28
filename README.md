@@ -206,7 +206,7 @@ sbatch bowtie_db.sh
 # maps reads to bowtie database
 sbatch bowtie.sh
 
-# run semiin 
+# run semibin 
 export PATH=/scratch/alvarordr/soft/miniforge-pypy3/bin/:$PATH
 source /scratch/alvarordr/soft/miniforge-pypy3/etc/profile.d/conda.sh
 conda activate SemiBin
@@ -236,7 +236,8 @@ conda activate gtdbtk-2.1.1
 sbatch gtdb.sh
 
 # genome abundance
-find out/dereplicated_genomes/ | grep fa.gz > paths_drep.mq.txt
+mkdir out_coverM
+find out_drep/dereplicated_genomes/ | grep fa.gz > paths_drep.mq.txt
 sbatch coverm.sh
 
 ```
