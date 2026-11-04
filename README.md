@@ -257,6 +257,9 @@ sbatch emapper_1.sh
 cat out_emapper/chunk*.emapper.seed_orthologs > all.seed_orthologs
 sbatch emapper_2.sh
 
+# run CARD annotations
+sbatch CARD.sh
+
 ```
 
 
