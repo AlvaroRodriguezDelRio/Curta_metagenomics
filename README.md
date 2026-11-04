@@ -247,7 +247,7 @@ python /scratch/alvarordr/field_experiment_metagenomes/analysis/binning_combined
 
 ## Gene prediction and functional annotation 
 
-```
+``` 
 # run gene prediction
 sbatch prodigal.sh
 find $PWD/proteins | grep faa | grep chunk_ > paths_proteins.txt
