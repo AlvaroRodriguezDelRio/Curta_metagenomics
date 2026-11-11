@@ -30,6 +30,7 @@ The only thing you need to modify in your `.sh` scripts is:
 - The number of samples to run by changing the ```#SBATCH --array=1-X``` line , being X the number of samples you have
 - The formatting of your sample names, in the declaration of the `file2` and `name` variables.
 - Software parameters (defaults are usually working well)
+- Before running any script, run ```conda deactivate```, and ```export PATH=/scratch/alvarordr/soft/miniconda3/bin/:/scratch/alvarordr/soft/miniconda3_scapp/bin/:/scratch/alvarordr/soft/miniforge-pypy3/bin/:/scratch/alvarordr/soft/miniconda3_w/bin/:/scratch/alvarordr/soft/miniconda_2024/bin:$PATH```
 
 Some python scripts also assume certain file name terminations, which may need to be changed. 
 
